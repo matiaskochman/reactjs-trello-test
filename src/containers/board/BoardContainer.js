@@ -8,7 +8,8 @@ import BoardComponent from 'components/board/BoardComponent';
 class BoardContainer extends Component {
   static propTypes = {
     userList: PropTypes.array.isRequired,
-    fetchUsers: PropTypes.func.isRequired
+    fetchUsers: PropTypes.func.isRequired,
+    changeUserState: PropTypes.func.isRequired
   }
 
   componentWillMount() {
@@ -17,10 +18,12 @@ class BoardContainer extends Component {
   }
 
   render() {
+    const { changeUserState } = this.props;
+
     const { userList } = this.props;
     console.log(userList);
     return (
-      <BoardComponent userList={userList} />
+      <BoardComponent userList={userList} changeUserState={changeUserState} />
     );
   }
 }

@@ -16,16 +16,27 @@ export const cardStyle = {
 };
 export const buttonsStyle = {
   display: 'flex',
-  justifyContent: 'space-between',
+  flexDirection: 'row',
+  justifyContent: 'space-between'
+};
+export const buttonLeftStyle = {
+  display: 'flex',
+  //alignSelf: 'flex-start',
+  marginTop: 10,
+};
+export const buttonRightStyle = {
+  display: 'flex',
+  //alignSelf: 'flex-end',
   marginTop: 10
 };
+
 export const nameStyle = {
   display: 'flex',
   flexDirection: 'row'
 };
 export const titleStyle = {
   display: 'flex',
-  marginLeft: 10,
+  marginLeft: 5,
   fontSize: 19,
   alignSelf: 'center'
 };

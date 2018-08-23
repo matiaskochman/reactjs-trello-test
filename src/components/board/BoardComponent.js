@@ -11,13 +11,16 @@ import * as styles from 'components/board/styles';
 
 class BoardComponent extends Component {
   static propTypes = {
-    userList: PropTypes.array.isRequired
+    userList: PropTypes.array.isRequired,
+    changeUserState: PropTypes.func.isRequired
   }
 
   renderList = (list) => {
+    const { changeUserState } = this.props;
+
     return list.map((user) => {
       return (
-        <UserCardComponent key={user.id.value} user={user} />
+        <UserCardComponent key={user.id.value} user={user} changeUserState={changeUserState} />
       );
     });
   }
@@ -48,11 +51,21 @@ class BoardComponent extends Component {
             {this.renderList(appliedList)}
           </Col>
           <Col style={styles.colStyle}>
-            <div style={styles.colTitleStyle}>Interviewing</div>
+            <div
+              className="d-flex justify-content-center"
+              style={styles.titleStyle}
+            >
+              Interviewing
+            </div>
             {this.renderList(interviewingList)}
           </Col>
           <Col style={styles.colStyle}>
-            <div style={styles.colTitleStyle}>Hired</div>
+            <div
+              className="d-flex justify-content-center"
+              style={styles.titleStyle}
+            >
+              Hired
+            </div>
             {this.renderList(hiredList)}
           </Col>
         </Row>

@@ -2,7 +2,7 @@ export const colStyle = {
   display: 'flex',
   justifyContent: 'center',
   flexDirection: 'column',
-  alignSelf: 'flex-start'
+  alignSelf: 'flex-start',
 };
 export const titleStyle = {
   marginBottom: 30,
