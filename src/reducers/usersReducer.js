@@ -9,20 +9,32 @@ export default function (state = [], action) {
   switch (action.type) {
     case CHANGE_USER_STATE: {
       const user = action.payload;
-      const updatedUserList = state.filter((usr) => {
+      const updatedUserList = state.userList.filter((usr) => {
         return user.id.value !== usr.id.value;
       });
-      return [...updatedUserList, user];
+      //return [...updatedUserList, user];
+      return {
+        userList: [...updatedUserList, user],
+        conexionError: false
+      };
     }
     case FETCH_USERS: {
       const users = action.payload.results;
       const processedUsers = users.map((user) => {
         return { ...user, state: APPLIED_STATE };
       });
-      return [...state, ...processedUsers];
+      //return [...state, ...processedUsers];
+      return {
+        userList: [...state, ...processedUsers],
+        conexionError: false
+      };
     }
     case FETCH_USERS_ERROR: {
-      return state;
+      //return state;
+      return {
+        userList: [],
+        conexionError: true
+      }
     }
     default:
       return state;

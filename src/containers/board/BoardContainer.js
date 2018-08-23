@@ -9,7 +9,8 @@ class BoardContainer extends Component {
   static propTypes = {
     userList: PropTypes.array.isRequired,
     fetchUsers: PropTypes.func.isRequired,
-    changeUserState: PropTypes.func.isRequired
+    changeUserState: PropTypes.func.isRequired,
+    conexionError: PropTypes.bool
   }
 
   componentWillMount() {
@@ -18,19 +19,22 @@ class BoardContainer extends Component {
   }
 
   render() {
-    const { changeUserState } = this.props;
-
+    const { changeUserState, conexionError } = this.props;
     const { userList } = this.props;
-    console.log(userList);
-    return (
-      <BoardComponent userList={userList} changeUserState={changeUserState} />
-    );
+
+    if (conexionError === false) {
+      return (
+        <BoardComponent userList={userList} changeUserState={changeUserState} />
+      );
+    }
+    return <div>Connection Error!!!!!!</div>;
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    userList: state.userList
+    userList: state.userState.userList,
+    conexionError: state.userState.conexionError
   };
 };
 export default connect(mapStateToProps, actions)(BoardContainer);
