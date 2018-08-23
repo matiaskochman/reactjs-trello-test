@@ -5,7 +5,7 @@ import {
   APPLIED_STATE,
 } from 'actions/types';
 
-export default function (state = [], action) {
+export default function (state = { userList: [], conexionError: false }, action) {
   switch (action.type) {
     case CHANGE_USER_STATE: {
       const user = action.payload;
