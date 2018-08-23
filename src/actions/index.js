@@ -11,3 +11,10 @@ export function fetchUsers() {
     type: FETCH_USERS_SAGA
   };
 }
+export function changeUserState(user, newState) {
+  user.state = newState;
+  return {
+    type: CHANGE_USER_STATE,
+    payload: user
+  };
+}

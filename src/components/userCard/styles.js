@@ -4,8 +4,8 @@ export const bodyStyle = {
   flexDirection: 'row',
 };
 export const imgStyle = {
-  width: '39%',
-  height: '39%',
+  width: '100%',
+  height: '100%',
   borderRadius: '50%'
 };
 export const cardStyle = {
@@ -17,7 +17,7 @@ export const cardStyle = {
 export const buttonsStyle = {
   display: 'flex',
   justifyContent: 'space-between',
-  marginTop: 20
+  marginTop: 10
 };
 export const nameStyle = {
   display: 'flex',
