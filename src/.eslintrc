@@ -73,7 +73,7 @@
       "import/no-duplicates": 0,
       "import/named": 0,
       "import/namespace": 0,
-      "import/no-unresolved": 2,
+      "import/no-unresolved": 0,
       "import/no-named-as-default": 2,
       "import/no-extraneous-dependencies": 0,
       "comma-dangle": 0,

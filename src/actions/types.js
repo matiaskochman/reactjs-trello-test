@@ -5,3 +5,4 @@ export const HIRED_STATE = 'HIRED_SATE';
 export const FETCH_USERS = 'FETCH_USERS';
 export const CHANGE_USER_STATE = "CHANGE_USER_STATE";
 export const FETCH_USERS_ERROR = 'FETCH_USERS_ERROR';
+export const FETCH_USERS_SAGA = 'FETCH_USERS_SAGA';
