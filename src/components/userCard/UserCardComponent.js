@@ -1,33 +1,39 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Container,
-  Row,
-  Col
+  Card, CardBody,
+  CardTitle, Button
 } from 'reactstrap';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
-} from 'reactstrap';
+import { FaLessThan, FaGreaterThan } from 'react-icons/fa';
+import * as styles from 'components/userCard/styles';
+
 import { APPLIED_STATE, INTERVIEWING_STATE, HIRED_STATE } from 'actions/types';
 
 export default class UserCardComponent extends Component {
+  static propTypes = {
+    user: PropTypes.object.isRequired
+  }
+
   render() {
-    const cardStyle = {
-      margin: 10
-    };
-    const imgStyle = {
-      width: '50%',
-      height: '50%',
-      borderRadius: '30%'
-    };
+    const { user } = this.props;
+
     return (
-      <Card style={cardStyle}>
-        <CardImg style={imgStyle} src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap" />
-        <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <Button>Button</Button>
-        </CardBody>
+      <Card style={styles.cardStyle}>
+        <div style={styles.bodyStyle}>
+          <img style={styles.imgStyle} src={user.picture.large} alt="Smiley face" />          
+          <CardBody style={styles.nameStyle}>
+            <CardTitle style={styles.titleStyle}>{user.name.first}</CardTitle>
+            <CardTitle style={styles.titleStyle}>{user.name.last}</CardTitle>
+          </CardBody>
+        </div>
+        <div style={styles.buttonsStyle}>
+          <Button style={styles.buttonStyle}>
+            <FaLessThan style={styles.iconStyle} />
+          </Button>
+          <Button style={styles.buttonStyle}>
+            <FaGreaterThan style={styles.iconStyle} />
+          </Button>
+        </div>
       </Card>
     );
   }

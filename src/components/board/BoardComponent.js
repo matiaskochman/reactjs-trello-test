@@ -7,6 +7,7 @@ import {
 } from 'reactstrap';
 import { APPLIED_STATE, INTERVIEWING_STATE, HIRED_STATE } from 'actions/types';
 import UserCardComponent from 'components/userCard/UserCardComponent';
+import * as styles from 'components/board/styles';
 
 class BoardComponent extends Component {
   static propTypes = {
@@ -16,7 +17,7 @@ class BoardComponent extends Component {
   renderList = (list) => {
     return list.map((user) => {
       return (
-        <UserCardComponent />
+        <UserCardComponent key={user.id.value} user={user} />
       );
     });
   }
@@ -34,33 +35,24 @@ class BoardComponent extends Component {
       return user.state === HIRED_STATE;
     });
 
-    const colStyle = {
-      display: 'flex',
-      justifyContent: 'center',
-      flexDirection: 'column',
-    };
-    const titleStyle = {
-      marginBottom: 30,
-      alignSeft: 'flex-start'
-    };
     return (
       <Container>
         <Row style={{ justifyContent: 'flex-start' }}>
-          <Col style={colStyle}>
+          <Col style={styles.colStyle}>
             <div
               className="d-flex justify-content-center"
-              style={titleStyle}
+              style={styles.titleStyle}
             >
               Applied
             </div>
             {this.renderList(appliedList)}
           </Col>
-          <Col style={colStyle}>
-            <div className="d-flex justify-content-center">Interviewing</div>
+          <Col style={styles.colStyle}>
+            <div style={styles.colTitleStyle}>Interviewing</div>
             {this.renderList(interviewingList)}
           </Col>
-          <Col style={colStyle}>
-            <div className="d-flex justify-content-center">Hired</div>
+          <Col style={styles.colStyle}>
+            <div style={styles.colTitleStyle}>Hired</div>
             {this.renderList(hiredList)}
           </Col>
         </Row>

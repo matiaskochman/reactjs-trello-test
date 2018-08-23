@@ -1,5 +1,6 @@
 import {
   FETCH_USERS,
+  FETCH_USERS_ERROR,
   CHANGE_USER_STATE,
   APPLIED_STATE,
   INTERVIEWING_STATE,
@@ -16,6 +17,9 @@ export default function (state = [], action) {
         return { ...user, state: APPLIED_STATE };
       });
       return [...state, ...processedUsers];
+    }
+    case FETCH_USERS_ERROR: {
+      return state;
     }
     default:
       return state;
