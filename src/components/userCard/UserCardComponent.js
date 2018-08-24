@@ -52,7 +52,7 @@ export default class UserCardComponent extends Component {
   }
 
   render() {
-    const { user, changeUserState } = this.props;
+    const { user } = this.props;
 
     return (
       <Card style={styles.cardStyle}>

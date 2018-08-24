@@ -8,7 +8,7 @@ import {
   FETCH_USERS_SAGA
 } from 'actions/types';
 
-const URL = 'https://randomuser.me/api/?nat=gb&results=5';
+const URL = 'https://randomuser.me/api/?nat=gb&results=500';
 
 function* fetchUsersAsync() {
   try {

@@ -4,8 +4,8 @@ export const bodyStyle = {
   flexDirection: 'row',
 };
 export const imgStyle = {
-  width: '100%',
-  height: '100%',
+  width: '128',
+  height: '128',
   borderRadius: '50%'
 };
 export const cardStyle = {
@@ -21,23 +21,25 @@ export const buttonsStyle = {
 };
 export const buttonLeftStyle = {
   display: 'flex',
-  //alignSelf: 'flex-start',
   marginTop: 10,
 };
 export const buttonRightStyle = {
   display: 'flex',
-  //alignSelf: 'flex-end',
   marginTop: 10
 };
 
 export const nameStyle = {
   display: 'flex',
-  flexDirection: 'row'
+  flexDirection: 'row',
+  padding: 1,
+  paddingLeft: 8,
+  width: 160
+
 };
 export const titleStyle = {
   display: 'flex',
   marginLeft: 5,
-  fontSize: 19,
+  fontSize: 16,
   alignSelf: 'center'
 };
 export const buttonStyle = {

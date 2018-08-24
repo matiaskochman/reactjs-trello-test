@@ -40,7 +40,7 @@ class BoardComponent extends Component {
 
     return (
       <Container>
-        <Row style={{ justifyContent: 'flex-start' }}>
+        <Row style={styles.rowStyle}>
           <Col style={styles.colStyle}>
             <div
               className="d-flex justify-content-center"
