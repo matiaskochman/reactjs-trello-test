@@ -16,7 +16,6 @@ export default class UserCardComponent extends Component {
   }
 
   clickLeftButton = (user) => {
-    console.log('leftclick');
     const { changeUserState } = this.props;
 
     switch (user.state) {
@@ -34,7 +33,6 @@ export default class UserCardComponent extends Component {
   }
 
   clickRightButton = (user) => {
-    console.log('rightclick');
     const { changeUserState } = this.props;
 
     switch (user.state) {
