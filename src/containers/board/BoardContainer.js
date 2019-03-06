@@ -37,4 +37,10 @@ const mapStateToProps = (state) => {
     conexionError: state.userState.conexionError
   };
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchUsers : dispatch(actions.fetchUsers)
+  }
+}
 export default connect(mapStateToProps, actions)(BoardContainer);
